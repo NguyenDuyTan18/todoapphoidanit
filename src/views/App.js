@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.scss';
 import MyComponent from './example/mycomponent';
 import ListTodo from './Todos/ListTodo';
+import ListTodos from './Todos/ListTodo(NDT)';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 /**
@@ -18,9 +19,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-         Simple TODO Apps with Reactjs.
+         Simple TODO Apps with Reactjs form ZT
         </p>
         <ListTodo/>
+        {/* <ListTodos/> */}
         {/* <MyComponent/> */}
      
       </header>
