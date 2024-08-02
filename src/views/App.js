@@ -5,6 +5,15 @@ import ListTodo from './Todos/ListTodo';
 import ListTodos from './Todos/ListTodo(NDT)';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import Nav from './Nav/Nav';
+import Home from './example/Home';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 /**
  * 
  * 2. class component / function componennnt (function / arrow func)
@@ -15,34 +24,45 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Simple TODO Apps with Reactjs form ZT
-        </p>
-        <ListTodo/>
-        {/* <ListTodos/> */}
-        {/* <MyComponent/> */}
-     
-      </header>
+    <BrowserRouter>
+      <div className="App">
+        <header className="App-header">
+          <Nav />
+          <img src={logo} className="App-logo" alt="logo" />
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/todo">
+              <ListTodo />
+            </Route>
+            <Route path="/about">
+              <MyComponent />
+            </Route>
+          </Switch>
 
-        <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-        
-        />
-        {/* Same as */}
-        <ToastContainer />
-    </div>
+          {/* <ListTodo/> */}
+          {/* <ListTodos/> */}
+          {/* <MyComponent/> */}
+        </header>
+
+          <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          
+          />
+          {/* Same as */}
+          <ToastContainer />
+      </div>
+    </BrowserRouter>
 
   );
 }
