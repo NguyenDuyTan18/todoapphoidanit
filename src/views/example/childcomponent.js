@@ -1,15 +1,22 @@
 import React from "react";
 import './Demo.scss'
-
+import { toast } from 'react-toastify';
 class ChildComponent extends React.Component {
     state = {
         showJobs: false
     }
 
     handleShowHide = () => {
+        if(!this.state.showJobs) {
+            toast.success('Show sucess...')
+        }
+        else {
+            toast.success('Hide sucess...')
+        }
         this.setState({
             showJobs: !this.state.showJobs
         })
+        
     }
 
     handleOnClickDelete = (job) => {

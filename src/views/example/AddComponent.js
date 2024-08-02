@@ -1,5 +1,5 @@
 import React from "react";
-
+import { toast } from 'react-toastify';
 class AddComponent extends React.Component {
 
     state = {
@@ -24,7 +24,7 @@ class AddComponent extends React.Component {
         event.preventDefault()
 
        if(!this.state.title || !this.state.salary){
-            alert('Missinggg...')
+            toast.warn('Missing...')
             return;
        }
 
@@ -35,10 +35,12 @@ class AddComponent extends React.Component {
             title: this.state.title,
             salary: this.state.salary
         })
+        
         this.setState({
             title: '',
             salary: ''
         })
+        toast.success('Add success...')
     }
     render () {
         return (

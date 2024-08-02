@@ -1,6 +1,7 @@
 import React from "react";
 import ChildComponent from "./childcomponent";
 import AddComponent from "./AddComponent";
+import { toast } from 'react-toastify';
 class MyComponent extends React.Component {
     state = {
         arrJobs: [
