@@ -22,6 +22,7 @@ class ChildComponent extends React.Component {
     handleOnClickDelete = (job) => {
         console.log('<<< Check handleOnClickDelete: ', job)
         this.props.DeleteAJob(job)
+        toast.success('Delete success...')
     }
     render() {
         // console.log(this.state.showJobs)
