@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import logo from "../../assets/images/zt.png"
-
+import { connect } from "react-redux";
 class Home extends React.Component {
     componentDidMount() {
         // setTimeout(() => {
@@ -11,7 +11,7 @@ class Home extends React.Component {
     }
 
     render() {
-        console.log('>>> check props: ',this.props)
+        console.log('>>> check props redux: ',this.props.dataRedux)
         return (
             <>
             <div>Hello world from HomePages with ZT</div>
@@ -24,4 +24,10 @@ class Home extends React.Component {
     }
 }
 
-export default withRouter(Home);
+const mapStateToProp = (state) => {
+    return {
+        dataRedux: state.users
+    }
+}
+
+export default connect( mapStateToProp)(withRouter(Home));
