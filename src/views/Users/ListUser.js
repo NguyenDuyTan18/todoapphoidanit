@@ -7,11 +7,6 @@ class ListUser extends React.Component {
         ListUser: []
     }
     async componentDidMount() {
-        // axios.get('https://reqres.in/api/users?page=1')
-        //     .then(res => {
-        //     console.log('>>> check res: ', res.data.data)
-        // })
-
         let res = await axios.get('https://reqres.in/api/users?page=1')
         this.setState({
             ListUser: res && res.data && res.data.data ? res.data.data : []
@@ -21,6 +16,7 @@ class ListUser extends React.Component {
 
 
     handleViewDetail = (user) => {
+        console.log('>>> check props: ', this.props)
       this.props.history.push(`user/${user.id}`)
     }
     render() {
